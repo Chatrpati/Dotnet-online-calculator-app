@@ -1,5 +1,5 @@
 pool:
-  name: myagent
+  name: EC2Agent
   demands:
   - msbuild
   variables:
