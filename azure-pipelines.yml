@@ -1,4 +1,8 @@
-variables:
+pool:
+  name: myagent
+  demands:
+  - msbuild
+  variables:
   buildConfiguration: 'Release'
 
 steps:
