@@ -11,4 +11,10 @@ steps:
 - task: DotNetCoreCLI@2
   inputs:
     command: 'publish'
-    publishWebProjects: false
+    publishWebProjects: true
+- task: AzureWebApp@1
+  inputs:
+    azureSubscription: '<service-connection-name>'
+    appType: 'webAppLinux'
+    appName: '<app-name>'
+    package: '$(System.DefaultWorkingDirectory)/**/*.zip'
