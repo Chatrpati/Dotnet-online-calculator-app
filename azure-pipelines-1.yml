@@ -1,8 +1,4 @@
-pool:
-  name: myagent
-  demands:
-  - msbuild
-  variables:
+variables:
   buildConfiguration: 'Release'
 
 steps:
@@ -14,7 +10,7 @@ steps:
     publishWebProjects: true
 - task: AzureWebApp@1
   inputs:
-    azureSubscription: 'calculator.net'
+    azureSubscription: 'calculator-net'
     appType: 'webAppLinux'
-    appName: 'calculator-net'
+    appName: 'calculator.net'
     package: '$(System.DefaultWorkingDirectory)/**/*.zip'
